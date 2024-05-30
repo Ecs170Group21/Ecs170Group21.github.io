@@ -7,26 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
-
-body, html {
-  height: 100%;
-  line-height: 1.8;
-}
-
-/* Full height image header */
-.bgimg-1 {
-  background-position: center;
-  background-size: cover;
-  background-image: url("/w3images/mac.jpg");
-  min-height: 100%;
-}
-
-.w3-bar .w3-button {
-  padding: 16px;
-}
-</style>
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
@@ -37,11 +18,10 @@ body, html {
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
       <a href="#application" class="w3-bar-item w3-button">APPLICATION</a>
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="about.html" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="team.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
       <i class="fa fa-bars"></i>
     </a>
@@ -52,13 +32,14 @@ body, html {
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
   <a href="#application" onclick="w3_close()" class="w3-bar-item w3-button">APPLICATION</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="team.html" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
 </nav>
 
 
 <!-- Application Section -->
 <div class="w3-container" style="padding:128px 16px" id="application">
+  <div id="container3D"></div> 
   <h3 class="w3-center">APPLICATION</h3>
   <p class="w3-center w3-large">Key features of our application</p>
   <div class="w3-row-padding w3-center" style="margin-top:64px">
@@ -87,120 +68,3 @@ body, html {
     <a href="#try" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-hover-opacity">Try it out</a>
   </div>
 </div>
-
-<!-- About Section -->
-<div class="w3-container w3-light-grey" style="padding:128px 16px" id="about">
-  <h3 class="w3-center">ABOUT THE APPLICATION</h3>
-  <p class="w3-center w3-large">Key features of our brain tumor detection</p>
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-quarter">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Responsive</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Passion</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Design</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-quarter">
-      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Support</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-  </div>
-</div>
-
-<!-- Team Section -->
-<div class="w3-container w3-dark-grey" style="padding:128px 16px" id="team">
-  <h3 class="w3-center">GROUP 21</h3>
-  <p class="w3-center w3-large">The Developers</p>
-  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
-    <!-- Maggie Chen -->
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card w3-light-grey">
-        <!-- <img src="/w3images/team2.jpg" alt="Maggie Chen" style="width:100%"> -->
-        <div class="w3-container">
-          <h3>Maggie Chen</h3>
-          <p class="w3-opacity">Position</p>
-          <p>Brief description of Maggie Chen's role and contributions.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div><!-- Kirin Kapoor -->
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card w3-light-grey">
-		<!-- <img src="/w3images/team2.jpg" alt="Kirin Kapoor" style="width:100%"> -->
-        <div class="w3-container">
-          <h3>Kirin Kapoor</h3>
-          <p class="w3-opacity">Position</p>
-          <p>Brief description of Kirin Kapoor's role and contributions.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-	<!-- Isaac Craig -->
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card w3-light-grey">
-        <!-- <img src="/w3images/team2.jpg" alt="Isaac Craig" style="width:100%"> -->
-        <div class="w3-container">
-          <h3>Isaac Craig</h3>
-          <p class="w3-opacity">Position</p>
-          <p>Brief description of Isaac Craig's role and contributions.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-	<!-- Jack Thomson -->
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card w3-light-grey">
-        <!-- <img src="/w3images/team2.jpg" alt="Jack Thomson" style="width:100%"> -->
-        <div class="w3-container">
-          <h3>Jack Thomson</h3>
-          <p class="w3-opacity">Position</p>
-          <p>Brief description of Jack Thomson's role and contributions.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-	<!-- Arvind Tawker -->
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card w3-light-grey">
-        <!-- <img src="/w3images/team2.jpg" alt="Arvind Tawker" style="width:100%"> -->
-        <div class="w3-container">
-          <h3>Arvind Tawker</h3>
-          <p class="w3-opacity">Position</p>
-          <p>Brief description of Arvind Tawker's role and contributions.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-	<!-- Parinita Gupta -->
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card w3-light-grey">
-        <!-- <img src="/w3images/team2.jpg" alt="Parinita Gupta" style="width:100%"> -->
-        <div class="w3-container">
-          <h3>Parinita Gupta</h3>
-          <p class="w3-opacity">Position</p>
-          <p>Brief description of Parinita Gupta's role and contributions.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-	<!-- Chelsea Huffman -->
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-card w3-light-grey">
-        <!-- <img src="/w3images/team2.jpg" alt="Chelsea Huffman" style="width:100%"> -->
-        <div class="w3-container">
-          <h3>Chelsea Huffman</h3>
-          <p class="w3-opacity">Position</p>
-          <p>Brief description of Chelsea Huffman's role and contributions.</p>
-          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
