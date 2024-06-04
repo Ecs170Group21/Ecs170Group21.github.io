@@ -87,11 +87,12 @@
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0xffffff, 1); // Set background color to white
     document.getElementById("container3D").appendChild(renderer.domElement);
 
-    // Create a cube
-    var geometry = new THREE.BoxGeometry();
-    var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    // Create a larger cube and set its color to orange
+    var geometry = new THREE.BoxGeometry(2, 2, 2); // Increase size of the cube
+    var material = new THREE.MeshBasicMaterial({ color: 0xffa500 }); // Set color to orange
     var cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
