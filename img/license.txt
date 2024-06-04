@@ -1,0 +1,11 @@
+Model Information:
+* title:	Blue Brain
+* source:	https://sketchfab.com/3d-models/blue-brain-a7943aec0f0440b38c94c1533c0df217
+* author:	Wilhelm.von.3D (https://sketchfab.com/Wilhelm.von.3D)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Blue Brain" (https://sketchfab.com/3d-models/blue-brain-a7943aec0f0440b38c94c1533c0df217) by Wilhelm.von.3D (https://sketchfab.com/Wilhelm.von.3D) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

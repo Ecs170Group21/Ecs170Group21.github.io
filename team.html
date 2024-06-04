@@ -1,3 +1,4 @@
+<title>Brain Tumor Recognition</title>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,30 +10,34 @@
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-    <div class="w3-bar w3-white w3-card" id="myNavbar">
-      <a href="index.html" class="w3-bar-item w3-button w3-wide">LOGO</a>
-      <div class="w3-right w3-hide-small">
-        <a href="index.html#application" class="w3-bar-item w3-button">APPLICATION</a>
-        <a href="about.html" class="w3-bar-item w3-button">ABOUT</a>
-        <a href="team.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      </div>
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-        <i class="fa fa-bars"></i>
-      </a>
+  <div class="w3-bar w3-light-grey w3-card" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-wide">
+      <i class="fa fa-medkit w3-margin-right fa-lg"></i> <!-- Brain icon -->
+    </a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="application.html" class="w3-bar-item w3-button">APPLICATION</a>
+      <a href="about.html" class="w3-bar-item w3-button">ABOUT</a>
+      <a href="team.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
     </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 </div>
 
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-    <a href="#application" onclick="w3_close()" class="w3-bar-item w3-button">APPLICATION</a>
+    <a href="application.html" onclick="w3_close()" class="w3-bar-item w3-button">APPLICATION</a>
     <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
     <a href="team.html" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
 </nav>
 
-<div class="w3-container w3-dark-grey" style="padding:128px 16px" id="team">
+<div class="w3-container w3-white" style="padding:128px 16px" id="team">
     <h3 class="w3-center">GROUP 21</h3>
-    <p class="w3-center w3-large">The Developers</p>
+    <p class="w3-center w3-large">Meet The Developers!</p>
     <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
       <!-- Maggie Chen -->
       <div class="w3-col l3 m6 w3-margin-bottom">

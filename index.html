@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>Brain Tumor Recognition</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<style>
+  body {
+    background-color: white;
+  }
+  .w3-top {
+    background-color: #f1f1f1; /* Light grey background for the navbar */
+  }
+</style>
 </head>
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+  <div class="w3-bar w3-light-grey w3-card" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-wide">
+      <i class="fa fa-medkit w3-margin-right fa-lg"></i> <!-- Brain icon -->
+    </a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#application" class="w3-bar-item w3-button">APPLICATION</a>
+      <a href="application.html" class="w3-bar-item w3-button">APPLICATION</a>
       <a href="about.html" class="w3-bar-item w3-button">ABOUT</a>
       <a href="team.html" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
     </div>
@@ -31,40 +43,70 @@
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#application" onclick="w3_close()" class="w3-bar-item w3-button">APPLICATION</a>
+  <a href="application.html" onclick="w3_close()" class="w3-bar-item w3-button">APPLICATION</a>
   <a href="about.html" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
   <a href="team.html" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
 </nav>
 
-
 <!-- Application Section -->
 <div class="w3-container" style="padding:128px 16px" id="application">
+
   <div id="container3D"></div> 
-  <h3 class="w3-center">APPLICATION</h3>
-  <p class="w3-center w3-large">Key features of our application</p>
+
+  <h3 class="w3-center">BRAIN TUMOR RECOGNITION</h3>
+  <p class="w3-center w3-large">This web application processes images of brain scans to determine the presence of cancer. 
+    Upon detection, it identifies the tumor's location, highlights it on the brain scan, 
+    and provides an isolated image of the tumor.
+  </p>
+  <!--
   <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-quarter">
-      <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Responsive</p>
+    <div class="w3-third">
+      <i class="fa fa-search w3-margin-bottom w3-jumbo w3-center"></i>
+      <p class="w3-large">Detection</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
     </div>
-    <div class="w3-quarter">
-      <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Passion</p>
+    <div class="w3-third">
+      <i class="fa fa-bar-chart w3-margin-bottom w3-jumbo"></i>
+      <p class="w3-large">Analysis</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
     </div>
-    <div class="w3-quarter">
-      <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i>
+    <div class="w3-third">
+      <i class="fa fa-image w3-margin-bottom w3-jumbo"></i>
       <p class="w3-large">Design</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
     </div>
-    <div class="w3-quarter">
-      <i class="fa fa-cog w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Support</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-  </div>
-	<div class="w3-center" style="margin-top:64px">
-    <a href="#try" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-hover-opacity">Try it out</a>
+  </div> -->
+  <div class="w3-center" style="margin-top:64px">
+    <a href="application.html" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-hover-opacity">Try it out</a>
   </div>
 </div>
+
+<script>
+    // Initialize Three.js scene
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById("container3D").appendChild(renderer.domElement);
+
+    // Create a cube
+    var geometry = new THREE.BoxGeometry();
+    var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    var cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+
+    // Position the camera
+    camera.position.z = 5;
+
+    // Animation loop
+    function animate() {
+        requestAnimationFrame(animate);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+    animate();
+</script>
+
+</body>
+</html>
