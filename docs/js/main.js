@@ -27,7 +27,7 @@ const loader = new GLTFLoader();
 
 // Load file
 loader.load(
-  'frontend/img/scene.gltf',
+  'img/blue/scene.gltf',
   function (gltf) {
     object = gltf.scene; 
     scene.add(gltf.scene);
