@@ -11,7 +11,8 @@ def static_files(path):
     return send_from_directory('../docs', path)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # Use the PORT environment variable set by Heroku
+    app.run(debug=False, host='0.0.0.0', port=port) 
     
 # from flask import Flask, request, jsonify
 # from flask_cors import CORS
