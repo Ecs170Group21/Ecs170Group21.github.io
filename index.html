@@ -6,26 +6,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/style.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
-<style>
-  body {
-    background-color: white;
-  }
-  .w3-top {
-    background-color: #f1f1f1; /* Light grey background for the navbar */
-  }
-</style>
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-light-grey w3-card" id="myNavbar">
-    <a href="index.html" class="w3-bar-item w3-button w3-wide">
-      <i class="fa fa-medkit w3-margin-right fa-lg"></i> <!-- Brain icon -->
+  <div class="w3-bar w3-card" id="myNavbar">
+    <a href="index.html" class="w3-bar-item w3-button w3-wide icon">
+      <i class="fa fa-brain w3-margin-right fa-lg"></i> <!-- Brain icon -->
     </a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
@@ -49,8 +40,7 @@
 </nav>
 
 <!-- Application Section -->
-<div class="w3-container" style="padding:128px 16px" id="application">
-
+<div class="w3-container" id="application">
   <div id="container3D"></div> 
 
   <h3 class="w3-center">BRAIN TUMOR RECOGNITION</h3>
@@ -58,56 +48,11 @@
     Upon detection, it identifies the tumor's location, highlights it on the brain scan, 
     and provides an isolated image of the tumor.
   </p>
-  <!--
-  <div class="w3-row-padding w3-center" style="margin-top:64px">
-    <div class="w3-third">
-      <i class="fa fa-search w3-margin-bottom w3-jumbo w3-center"></i>
-      <p class="w3-large">Detection</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-third">
-      <i class="fa fa-bar-chart w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Analysis</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-    <div class="w3-third">
-      <i class="fa fa-image w3-margin-bottom w3-jumbo"></i>
-      <p class="w3-large">Design</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-    </div>
-  </div> -->
-  <div class="w3-center" style="margin-top:64px">
-    <a href="application.html" class="w3-button w3-black w3-padding-large w3-large w3-margin-top w3-hover-opacity">Try it out</a>
+  <script type="module" src="js/main.js"></script>
+  <div class="w3-center" style="margin-top:32px">
+    <a href="application.html" class="w3-button w3-padding-large w3-large w3-margin-top w3-hover-opacity white-button">Try it out</a>
   </div>
 </div>
-
-<script>
-    // Initialize Three.js scene
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    var renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0xffffff, 1); // Set background color to white
-    document.getElementById("container3D").appendChild(renderer.domElement);
-
-    // Create a larger cube and set its color to orange
-    var geometry = new THREE.BoxGeometry(2, 2, 2); // Increase size of the cube
-    var material = new THREE.MeshBasicMaterial({ color: 0xffa500 }); // Set color to orange
-    var cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-
-    // Position the camera
-    camera.position.z = 5;
-
-    // Animation loop
-    function animate() {
-        requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
-        renderer.render(scene, camera);
-    }
-    animate();
-</script>
 
 </body>
 </html>

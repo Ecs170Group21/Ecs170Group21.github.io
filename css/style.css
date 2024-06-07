@@ -1,18 +1,106 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+/* Universal body styles */
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+  color: #F5F5F5;
+  background-color: #121212; 
+  margin: 0;
+  padding: 0; 
+  line-height: 1.8;
+}
 
-body, html {
-    height: 100%;
-    line-height: 1.8;
-  }
-  
-  /* Full height image header */
-  .bgimg-1 {
-    background-position: center;
-    background-size: cover;
-    background-image: url("/w3images/mac.jpg");
-    min-height: 100%;
-  }
-  
-  .w3-bar .w3-button {
-    padding: 16px;
-  }
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
+}
+
+/* nav bar styles */
+.w3-bar {
+  padding: 16px;
+  background-color: #121212 !important;
+  color: #f5f5f5 !important;
+  margin: 0;
+  width: 100%;
+}
+
+/* Button styles */
+.white-button {
+  background-color: #ddd !important;
+  color: #2a2a2a !important;
+}
+
+.white-button:hover {
+  background-color: #e2e2e2 !important;
+}
+
+/* Navbar style adjustments */
+.w3-top, .w3-bar {
+  background-color: #222; 
+  top: 0;
+  color: #F5F5F5; 
+}
+
+/* navbar hover effects */
+.w3-bar .w3-button:hover {
+  background-color: transparent !important;
+  color: #F5F5F5 !important;
+  text-shadow: 0 0 8px rgba(254, 254, 254, 0.812); 
+}
+
+
+/* Link color adjustments for better visibility */
+a {
+  color: #F5F5F5;
+  text-decoration: none; 
+}
+
+/* Hover effects for links */
+a:hover {
+  color: #ddd; 
+}
+
+/* Sidebar styles for mobile */
+.w3-sidebar.w3-bar-block .w3-bar-item {
+  background-color: #444; 
+}
+
+/* Container adjustments for consistent padding and background */
+.w3-container {
+  background-color: #121212; 
+  padding: 32px 16px; 
+}
+
+/* Card styles */
+.w3-card{
+  padding: 15px; 
+  box-sizing: border-box;
+  background-color: transparent; 
+  color: #222;
+}
+
+.team-page {
+  background-color: #ecebeb; 
+  color: #222;
+}
+.team-page h3 {
+  background-color: #ecebeb;  
+  color: #222;
+}
+
+/* Footer or other sectional adjustments */
+footer, .w3-footer, .w3-bottom {
+  background-color: #222; 
+  color: #F5F5F5; 
+}
+
+/* 3D container styles */
+#container3D {
+  width: 100%; 
+  height: 425px;  
+  padding: 0;
+  margin: 0;
+  overflow: hidden;  
+  background-color: transparent; 
+}
