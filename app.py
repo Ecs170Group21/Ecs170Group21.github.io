@@ -1,6 +1,6 @@
 from flask import Flask, send_from_directory
 import os
-app = Flask(__name__, static_folder='../docs', static_url_path='')
+app = Flask(__name__, static_folder='docs', static_url_path='')
 
 @app.route('/')
 def index():
@@ -8,7 +8,7 @@ def index():
 
 @app.route('/<path:path>')
 def static_files(path):
-    return send_from_directory('../docs', path)
+    return send_from_directory('docs', path)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))  # Use the PORT environment variable set by Heroku
