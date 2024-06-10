@@ -35,6 +35,17 @@ body, h1, h2, h3, h4, h5, h6 {
   background-color: #e2e2e2 !important;
 }
 
+.analyze-button:hover {
+  background-color: #e2e2e2 !important;
+}
+
+.analyze-button {
+  background-color: #ddd !important;
+  color: #2a2a2a !important;
+  padding: 10px 20px !important; 
+  font-size: 16px !important; 
+}
+
 /* Navbar style adjustments */
 .w3-top, .w3-bar {
   background-color: #222; 
@@ -48,7 +59,6 @@ body, h1, h2, h3, h4, h5, h6 {
   color: #F5F5F5 !important;
   text-shadow: 0 0 8px rgba(254, 254, 254, 0.812); 
 }
-
 
 /* Link color adjustments for better visibility */
 a {
@@ -103,4 +113,15 @@ footer, .w3-footer, .w3-bottom {
   margin: 0;
   overflow: hidden;  
   background-color: transparent; 
+}
+
+.form-container {
+  text-align: center;
+  margin: 0 auto;  /* Center horizontally */
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

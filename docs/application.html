@@ -42,6 +42,13 @@
 <!-- Application Section -->
 <div class="w3-container" style="padding:128px 16px" id="application">
 	<h3 class="w3-center">BRAIN TUMOR RECOGNITION</h3>
+  <p class="w3-center">Upload MATLAB (.mat) file here:</p>
+	<div class="form-container">
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept=".mat" required>
+        <button type="submit" class="w3-button w3-padding-large w3-large w3-margin-top w3-hover-opacity analyze-button">Analyze Image</button>
+    </form>
+</div>
 </div>
 
 </body>
