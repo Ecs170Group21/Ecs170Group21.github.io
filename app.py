@@ -17,7 +17,7 @@ from keras.layers import Input, Dense, Flatten, Conv2D, MaxPooling2D
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = {'mat'}
 MODEL_PATH = 'base_classifier/'
-ALL_LABELS = {0: 'Meningioma', 1: 'Glioma', 2: 'Pituitary tumor'}
+ALL_LABELS = {1: 'Meningioma', 2: 'Glioma', 3: 'Pituitary tumor'}
 
 app = Flask(__name__, template_folder='docs', static_folder='docs', static_url_path='')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
