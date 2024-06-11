@@ -10,20 +10,20 @@ import matplotlib.patches as patches
 import cv2
 import random
 from keras.utils import Sequence
-from keras.models import Model
+from keras import models as Model
 from keras.layers import Input, Dense, Flatten, Conv2D, MaxPooling2D
 
 
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = {'mat'}
-MODEL_PATH = 'models/model.pb'
+MODEL_PATH = 'base_classifier/'
 
 app = Flask(__name__, template_folder='docs', static_folder='docs', static_url_path='')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Load the model
 def load_keras_model():
-    model = load_model(MODEL_PATH)
+    model = Model.load_model(MODEL_PATH)
     return model
 
 # Load the model when the app starts
@@ -79,16 +79,16 @@ def process_image(image_path):
 def preprocess(data):
     # Implement your preprocessing here
     # Example: assuming 'data' is the key for the dataset in the .mat file
-    dataset = data['data']
-    processed_data = dataset[:] / 255.0  # Example normalization
-    processed_data = np.expand_dims(processed_data, axis=0)  # Add batch dimension
+    datum = data['image']
+    processed_data = datum / 12728  # Example normalization
     return processed_data
 
 # TODO
 def model_inference(data):
     # Convert data to the format expected by the model and run inference
     predictions = model.predict(data)
-    return str(predictions)
+    prediction = np.argmax(predictions) + 1
+    return prediction
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
