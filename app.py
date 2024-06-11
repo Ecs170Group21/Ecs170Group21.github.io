@@ -2,13 +2,32 @@ from flask import Flask, request, redirect, url_for, render_template
 import os
 from werkzeug.utils import secure_filename
 from scipy.io import loadmat
+import scipy.io as sio
 import h5py
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+import cv2
+import random
+from keras.utils import Sequence
+from keras.models import Model
+from keras.layers import Input, Dense, Flatten, Conv2D, MaxPooling2D
+
 
 UPLOAD_FOLDER = 'uploads/'
 ALLOWED_EXTENSIONS = {'mat'}
+MODEL_PATH = 'models/model.pb'
 
 app = Flask(__name__, template_folder='docs', static_folder='docs', static_url_path='')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Load the model
+def load_keras_model():
+    model = load_model(MODEL_PATH)
+    return model
+
+# Load the model when the app starts
+model = load_keras_model()
 
 # Set index as the first loaded page
 @app.route('/')
@@ -50,21 +69,26 @@ def upload_file():
     return redirect(url_for('application'))
 
 def process_image(image_path):
-    file_extension = image_path.rsplit('.', 1)[1].lower()
-    if file_extension == 'mat':
-        try:
-            # Attempt to load the .mat file using scipy
-            mat_contents = loadmat(image_path)
-            # INSERT MODEL SCRIPT HERE
-            return "MAT file processed. Variables: " + ', '.join(mat_contents.keys())  # TEMPORARY
-        except NotImplementedError as e:
-            # Handle MATLAB v7.3 files using h5py
-            with h5py.File(image_path, 'r') as f:
-                variables = list(f.keys())
-                # INSERT MODEL SCRIPT HERE
-                return "MAT v7.3 file processed. Variables: " + ', '.join(variables)  # TEMPORARY
-    else:
-        return "Unsupported file format."
+    # Load and process the .mat v7.3 file using h5py
+    with h5py.File(image_path, 'r') as f:
+        data = preprocess(f)
+        result = model_inference(data)
+        return result
+
+# TODO
+def preprocess(data):
+    # Implement your preprocessing here
+    # Example: assuming 'data' is the key for the dataset in the .mat file
+    dataset = data['data']
+    processed_data = dataset[:] / 255.0  # Example normalization
+    processed_data = np.expand_dims(processed_data, axis=0)  # Add batch dimension
+    return processed_data
+
+# TODO
+def model_inference(data):
+    # Convert data to the format expected by the model and run inference
+    predictions = model.predict(data)
+    return str(predictions)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
