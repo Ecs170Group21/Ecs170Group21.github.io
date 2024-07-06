@@ -14,8 +14,6 @@ This repository contains the code and resources for a web-based application desi
 - [Usage](#usage)
 - [File Descriptions](#file-descriptions)
 - [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Description
 
