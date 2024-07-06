@@ -13,6 +13,7 @@ This repository contains the code and resources for a web-based application desi
 - [Installation](#installation)
 - [Usage](#usage)
 - [File Descriptions](#file-descriptions)
+- [Frontend](#frontend)
 - [Results](#results)
 
 ## Project Description
@@ -73,6 +74,14 @@ pip install -r requirements.txt
 - `templates/`: Contains HTML templates for the web application.
 - `static/`: Contains static files like CSS and JavaScript.
 - `uploads/`: Directory where uploaded MRI scans are temporarily stored.
+
+### Frontend
+A demo of the frontend is shown below.
+
+
+https://github.com/Ecs170Group21/Ecs170Group21.github.io/assets/57011512/8464e8a1-6fde-4dd6-8831-73fdddda2784
+
+
 
 ### Results
 The convolutional neural network achieves high accuracy in classifying brain tumors. Detailed results, including precision, recall, and F1-score for each class, can be found in the final project report.
